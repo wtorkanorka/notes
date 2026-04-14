@@ -61,5 +61,8 @@ export const useNotesStore = create<INotesStore>((set, get) => ({
   },
 }));
 
+function getDataFromSQLiteStorage() {}
+function getDataFromLocalStorage() {}
+
 function handleSaveInSQLiteStorage() {}
 function handleSaveInLocalStorage() {}
