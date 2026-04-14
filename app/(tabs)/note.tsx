@@ -79,6 +79,24 @@ export default function NoteDetail() {
           />
         }
       >
+        <CustomButton
+          btnStyle={{ borderRadius: 20 }}
+          pressFnc={() => router.back()}
+        >
+          <Text
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              alignSelf: "flex-start",
+              backgroundColor: "#e3f2fd",
+              borderRadius: 20,
+              paddingHorizontal: 12,
+              paddingVertical: 6,
+            }}
+          >
+            Вернуться
+          </Text>
+        </CustomButton>
         <Text>Заметка не найдена</Text>
       </ParallaxScrollView>
     );
@@ -94,6 +112,24 @@ export default function NoteDetail() {
         />
       }
     >
+      <CustomButton
+        btnStyle={{ borderRadius: 20 }}
+        pressFnc={() => router.back()}
+      >
+        <Text
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            alignSelf: "flex-start",
+            backgroundColor: "#e3f2fd",
+            borderRadius: 20,
+            paddingHorizontal: 12,
+            paddingVertical: 6,
+          }}
+        >
+          Вернуться
+        </Text>
+      </CustomButton>
       <ScrollView
         style={styles.container}
         contentContainerStyle={{ paddingBottom: 100 }}
@@ -245,7 +281,7 @@ export default function NoteDetail() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    // padding: 20,
   },
   title: {
     fontSize: 24,

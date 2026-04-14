@@ -17,6 +17,18 @@ interface INotesStore {
     message: string;
   };
 }
+interface IStoreOnMobile {
+  storeType: "SQLite" | "LocalStorage";
+  changeStore: () => void;
+}
+
+export const useStoreOnMobile = create<IStoreOnMobile>((set, get) => ({
+  storeType: "SQLite",
+  changeStore: () =>
+    set((state) => ({
+      storeType: state.storeType == "SQLite" ? "LocalStorage" : "SQLite",
+    })),
+}));
 
 export const useNotesStore = create<INotesStore>((set, get) => ({
   notes: mockNotes,
@@ -48,3 +60,6 @@ export const useNotesStore = create<INotesStore>((set, get) => ({
     return { status: "successful" as const, message: "Заметка обновлена" };
   },
 }));
+
+function handleSaveInSQLiteStorage() {}
+function handleSaveInLocalStorage() {}
